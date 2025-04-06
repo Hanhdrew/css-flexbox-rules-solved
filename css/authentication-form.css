@@ -1,6 +1,8 @@
 /* 👇👇👇 SCROLL DOWN TO THE "ADD YOUR FORM STYLES BENEATH" comment (line 25) 👇👇👇*/
 
-* {
+*,
+*::before,
+*::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -11,6 +13,8 @@ body {
 }
 
 .content {
+  display: flex;
+  gap: 1rem;
   padding: 30px;
 }
 
@@ -25,12 +29,20 @@ p {
 /* 👇👇👇  ADD YOUR FORM STYLES BENEATH  👇👇👇*/
 
 form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   border: 1px solid #a9a9a9;
   padding: 20px;
 }
 
+form > div:last-child {
+  text-align: center;
+}
+
 .subtext {
   color: #a9a9a9;
+  margin: 5px 0;
   font-weight: unset;
 }
 
@@ -42,16 +54,29 @@ form {
 a {
   color: #335eea;
   text-decoration: none;
+  margin-left: 6px;
 }
 
 label {
   font-weight: bold;
 }
 
+label[for="login-field"],
+label[for="password-field"],
+label[for="name-field"],
+label[for="email"],
+label[for="password"],
+label[for="confirm-password"],
+label[for="phone"] {
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
 input {
   width: 100%;
   height: 30px;
-  padding: 5px;
+  margin: 6px 0;
+  padding: 6px;
 }
 
 input[type="checkbox"],
@@ -80,6 +105,21 @@ input[type="submit"]:hover {
   background: #294bbb;
 }
 
-.form select {
+/* .form select {
+  height: 30px;
+} */
+
+.form-group-horizontal-control {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-group-horizontal-control .form-input-control {
+  flex-grow: 1;
+}
+
+select {
+  display: block;
+  width: 100%;
   height: 30px;
 }
